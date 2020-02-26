@@ -16,6 +16,7 @@ public class SnakeGame {
                 game[i][k] = A[i][k];
             }
         }
+        headPosition= new int[2];
         headPosition[0] = x;
         headPosition[1] = y;
 
@@ -35,7 +36,7 @@ public class SnakeGame {
                     if (headPosition[0] != i && headPosition[1] != k && neighbors(i, k) == 1) {
                         tail[0] = i;
                         tail[1] = k;
-                        tail[3] = length;
+                        tail[2] = length;
                         return tail;
                     }
                 }
@@ -45,20 +46,23 @@ public class SnakeGame {
         return tail;
     }
 
-    //It will find the tail of the snake by conducting a search starting at the head location and recursively following the snake's body
-    //return 3 items: the x and y position of the tail in the grid, and the length of the snake on the board
+
     public int[] findTailRecursive() {
+
         resetCounters();
         int[] tail = new int[3];
+        for(int i = 0; i < game.length;i++){
+            for(int j = 0; j < game[i].length;j++){
+
+            }
+
+        }
 
 
         return tail;
     }
 
-    /*
-        neighbors method:
-        computes the number of 'true' neighbors the corresponding cell in the board has
-    */
+
 
     public int neighbors(int r, int c) {
         int count = 0;
@@ -91,6 +95,7 @@ public class SnakeGame {
 
     public int [] findTailRecursion(int [] currentPosition, int [] previousPosition){
 
+    return currentPosition;
     }
     private void resetCounters(){
         recursiveChecks = 0;
@@ -98,9 +103,10 @@ public class SnakeGame {
 
     }
     private static int getRecursiveChecks(){
+        return recursiveChecks;
 
     }
     private static int getExhaustiveChecks(){
-
+        return exhaustiveChecks;
     }
 }
